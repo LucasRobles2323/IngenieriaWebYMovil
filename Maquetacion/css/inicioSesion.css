@@ -59,6 +59,12 @@ h1.titulo{
     color: black;
 }
 
+.inicioSesion .formularioContenedor .formulario button#google img{
+    height: 20px;
+    margin-right: 6px;
+    border-radius: 60px;
+}
+
 div.centerText{
     text-align: center;
     margin: 0px;
