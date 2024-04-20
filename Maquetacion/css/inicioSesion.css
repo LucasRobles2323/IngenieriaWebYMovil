@@ -28,7 +28,7 @@ h1.titulo{
     flex-direction: column;
 }
 
-.inicioSesion .formularioContenedor .formulario .input{
+.inicioSesion .formularioContenedor .formulario input{
     border: none;
     border-radius: 45px;
     margin-bottom: 16px;

@@ -13,7 +13,15 @@
         <link rel="stylesheet"  href="css/menu.css" type="text/css"/>
 
         <!--javascript-->
-        <script src="js/inicio.js" async="true"></script>
+            <!-- jquery-->
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+            <!-- Propios -->
+        <script src="js/login.js" async="true"></script>
         
     </head>
 
@@ -27,13 +35,17 @@
                 </div>
 
                 
-                <form action="" class="formulario">
-                    
+                <form class="formulario" id="login">
+
                     <!-- Inputs -->
-                    <input type="email" class="input" placeholder="Correo Electrónico">
-                    <input type="text" class="input" placeholder="Contraseña">
+                    <input type="email" name="email" id="email" placeholder="Correo Electrónico">
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
 
                     <button>Iniciar Sesión</button>
+
+                </form>
+
+                <form class="formulario">
 
                     <div class="centerText">
                         <p> o continue con</p>
@@ -44,7 +56,7 @@
                     <div class="centerText final">
                         <p>
                             Si no posees cuenta, puedes registrarte <br> 
-                            <a class="botonText" href="#">Crear una cuenta nueva </a>
+                            <a class="botonText" href="registroUsuario.html">Crear una cuenta nueva </a>
                         </p>
                     </div>
 
