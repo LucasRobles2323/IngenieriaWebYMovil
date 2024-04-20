@@ -28,40 +28,47 @@
     <body>
         <section class="inicioSesion">
             
-            <div class="formularioContenedor">
+            <div class="auth-container">
 
                 <div class="centerText">
                     <h1 class="titulo">Inicio de Sesión</h1>
                 </div>
 
-                
-                <form class="formulario" id="login">
+                <form id="login">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Correo electrónico"
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Contraseña"
+                    />
 
-                    <!-- Inputs -->
-                    <input type="email" name="email" id="email" placeholder="Correo Electrónico">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
-
-                    <button>Iniciar Sesión</button>
+                    <button type="submit">Iniciar sesión</button>
 
                 </form>
 
-                <form class="formulario">
+                <form id="noLogin">
 
                     <div class="centerText">
-                        <p> o continue con</p>
+                        <p>o continue con</p>
                     </div>
                     
                     <button type="submit" id="google"><img src="imagenes/Iconos/googleIcon.png" alt="">Google</button>
                     
-                    <div class="centerText final">
-                        <p>
-                            Si no posees cuenta, puedes registrarte <br> 
-                            <a class="botonText" href="registroUsuario.html">Crear una cuenta nueva </a>
-                        </p>
+                    <div class="final">
+                        <p>Si no posees cuenta, puedes registrarte </p>
+                        <a href="registroUsuario.html">Crear una cuenta nueva </a>
                     </div>
 
                 </form>
+            
             </div>
+          
         </section>
 
     </body>
