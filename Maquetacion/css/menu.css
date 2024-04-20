@@ -8,6 +8,21 @@ body {
     background-color:rgb(89, 185, 255);
 }
 
+#backButton {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 13px;
+    left: 13px;
+    display: flex;
+    align-items: center;
+}
+
+#backButton img{
+    width: 100%;
+    height: auto;
+}
+
 .menu {
     position: absolute;
     bottom: 0;
@@ -23,6 +38,11 @@ body {
     border-radius: 60px;
 }
 
+.menu a {
+    outline: none;
+    text-decoration: none;
+}
+
 .menuItem {
     display: flex;
     flex-direction: column;
@@ -30,7 +50,7 @@ body {
     gap: 5px;
     padding: 10px;
     cursor: pointer;
-    color: rgba(153, 153, 153, 0.50);
+    color: black;
 }
 
 .menuItem > h6 {
