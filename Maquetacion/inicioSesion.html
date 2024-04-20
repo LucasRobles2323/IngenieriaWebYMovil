@@ -4,24 +4,24 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Inicio Sesión</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--estilos-->
-        <link rel="stylesheet" href="css/inicioSesion.css" type="text/css"/>
-        <link rel="stylesheet" href="css/menu.css" type="text/css"/>
-        
+        <link rel="stylesheet"  href="css/Sesion.css" type="text/css"/>
+        <link rel="stylesheet"  href="css/menu.css" type="text/css"/>
+
         <!--javascript-->
-            <!-- jQuery -->
+            <!-- jquery-->
         <script
             src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"
         ></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-            
             <!-- Propios -->
+        <script src="js/login.js" async="true"></script>
         <script src="js/backButton.js"></script>
         
     </head>
@@ -31,7 +31,51 @@
             <img src="imagenes/arrowBack.png">
         </div>
 
+        <section class="inicioSesion">
+            
+            <div class="auth-container">
 
+                <div class="centerText">
+                    <h1 class="titulo">Inicio de Sesión</h1>
+                </div>
+
+                <form id="login">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Correo electrónico"
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Contraseña"
+                    />
+
+                    <button type="submit">Iniciar sesión</button>
+
+                </form>
+
+                <form id="noLogin">
+
+                    <div class="centerText">
+                        <p>o continue con</p>
+                    </div>
+                    
+                    <button type="submit" id="google"><img src="imagenes/Iconos/googleIcon.png" alt="">Google</button>
+                    
+                    <div class="final">
+                        <p>Si no posees cuenta, puedes registrarte </p>
+                        <a href="registroUsuario.html">Crear una cuenta nueva </a>
+                    </div>
+
+                </form>
+            
+            </div>
+          
+        </section>
+        
         <!-- Menu -->
         <div class="menu">
             <a href="laberinto.html"> <div class="menuItem">
