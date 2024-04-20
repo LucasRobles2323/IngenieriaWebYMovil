@@ -1,4 +1,4 @@
-# Proyecto
+# Proyecto **ICI4247-1- INGENIERIA WEB Y MOVIL(1S2024)**
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 
 ## Descripción
 
-Este proyecto se realiza en conjunto con el proyecto del ramo **ICI4150-1 ROBOTICA Y SISTEMAS AUTONOMOS** y fue seleccionada la propuesta de Proyecto 2: 
+Este proyecto se realiza en conjunto con el proyecto del ramo **ICI4150-1- ROBOTICA Y SISTEMAS AUTONOMOS(1S2024)** y fue seleccionada la propuesta de Proyecto 2: 
 
 Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde el robot pueda encontrar la salida. El camino debe tener en cuenta las limitaciones del vehículo para evitar colisiones. Al completar el laberinto, tu robot debería celebrar girando dos veces en el sentido de las agujas del reloj y luego dos giros en el sentido contrario a las agujas del reloj. La meta está marcada por el círculo rojo. Para aproximaciones de distancia, todos los bloques grises miden 50 cm * 10 cm.
 

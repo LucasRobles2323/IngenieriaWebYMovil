@@ -22,10 +22,15 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
             <!-- Propios -->
         <script src="js/login.js" async="true"></script>
+        <script src="js/backButton.js"></script>
         
     </head>
-
     <body>
+        <!-- Boton de volver-->
+        <div id="backButton"> 
+            <img src="imagenes/arrowBack.png">
+        </div>
+
         <section class="inicioSesion">
             
             <div class="auth-container">
@@ -70,6 +75,22 @@
             </div>
           
         </section>
+        
+        <!-- Menu -->
+        <div class="menu">
+            <a href="laberinto.html"> <div class="menuItem">
+                <img src="imagenes/Iconos/laberinto.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <h6>Laberinto</h6>
+            </div> </a>
+            <a href="robot.html"> <div class="menuItem">
+                <img src="imagenes/Iconos/robot.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <h6>Robot</h6>
+            </div> </a>
+            <a href="inicioSesion.html"> <div class="menuItem active">
+                <img src="imagenes/Iconos/usuarioSelected.png" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">       
+                <h6>Usuario</h6>
+            </div> </a>
+        </div>
 
     </body>
 </html>
