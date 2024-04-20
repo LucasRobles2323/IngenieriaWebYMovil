@@ -9,13 +9,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--estilos-->
-        <link rel="stylesheet"  href="css/menu.css" type="text/css"/>
+        <link rel="stylesheet" href="css/menu.css" type="text/css"/>
         
         <!--javascript-->
-        <script src="js/inicio.js" async="true"></script>
+            <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+            
+            <!-- Propios -->
+        <script src="js/backButton.js"></script>
         
     </head>
     <body>
-        <script src="" async defer></script>
+        <!-- Boton de volver-->
+        <div id="backButton"> 
+            <img src="imagenes/arrowBack.png">
+        </div>
+
+        
+        <!-- Menu -->
+        <div class="menu">
+            <a href="laberinto.html"> <div class="menuItem">
+                <img src="imagenes/Iconos/laberinto.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <h6>Laberinto</h6>
+            </div> </a>
+            <a href="robot.html"> <div class="menuItem">
+                <img src="imagenes/Iconos/robot.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <h6>Robot</h6>
+            </div> </a>
+            <a href="inicioSesion.html"> <div class="menuItem">
+                <img src="imagenes/Iconos/usuario.png" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">       
+                <h6>Usuario</h6>
+            </div> </a>
+        </div>
+        
     </body>
 </html>
