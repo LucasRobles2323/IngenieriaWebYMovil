@@ -92,10 +92,17 @@ div.rotating div.right img{
 
 div.party {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
 }
 
 div.party div.botomParty img{
     width: 300px;
     height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    div.party div.botomParty img{
+        width: 300px;
+        height: auto;
+    }
 }
