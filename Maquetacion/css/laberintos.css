@@ -23,7 +23,7 @@
 }
 
 .maze-container {
-  width: 90%; /* Ancho máximo del contenedor del laberinto */
+  width: 30%; /* Ancho máximo del contenedor del laberinto */
   height: 50vh; /* Altura máxima del contenedor del laberinto */
   aspect-ratio: 1; /* Proporción cuadrada del contenedor */
   margin-bottom: 20px;
@@ -41,7 +41,7 @@
 }
 
 .button {
-  max-width: 30%; /* Ancho máximo del botón */
+  max-width: 28%; /* Ancho máximo del botón */
 }
 
 .button img {
@@ -51,6 +51,12 @@
 
 
 @media screen and (max-width: 768px) {
+
+  .maze-container {
+    width: 90%; /* Ancho máximo del contenedor del laberinto */
+    height: 50vh; /* Altura máxima del contenedor del laberinto */
+  }
+
   .button {
     max-width: 70%; /* Ancho máximo del botón */
   }
