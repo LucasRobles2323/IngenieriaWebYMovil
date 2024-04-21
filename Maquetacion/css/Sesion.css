@@ -38,10 +38,10 @@ div.centerText{
         max-height: 400px;
         display: flex;
         flex-direction: column;
+
         > form#login {
             display: flex;
-            margin: 0 auto  ;
-
+            margin: 0 auto;
             width: 75%;
             flex-direction: column;
             row-gap: 15px;
@@ -76,9 +76,9 @@ div.centerText{
     
         > form#signup {
             display: flex;
+            margin: 0 auto;
             width: 75%;
             flex-direction: column;
-            margin: 0 auto  ;
             row-gap: 10px;
     
             > button {
@@ -135,10 +135,9 @@ div.centerText{
     
         > form#noLogin {
             display: flex;
+            margin: 0 auto;
             width: 75%;
             flex-direction: column;
-            margin: 0 auto  ;
-
     
             > button#google {
                 padding: 12px 5px;
@@ -174,10 +173,9 @@ div.centerText{
                     font-weight: bold;
                     text-decoration: underline;
                 }
-                
             }
+
         }
 
-        
     }
 }

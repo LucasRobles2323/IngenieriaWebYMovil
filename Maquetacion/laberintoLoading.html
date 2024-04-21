@@ -4,12 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Cargando . . .</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--estilos-->
-        <link rel="stylesheet" href="css/laberintoLoading.css" type="text/css"/> 
+        <link rel="stylesheet" href="css/laberintos.css">
         <link rel="stylesheet" href="css/menu.css" type="text/css"/>
         
         <!--javascript-->
@@ -31,10 +31,31 @@
             <img src="imagenes/arrowBack.png">
         </div>
 
-        
+        <div class="container">
+          <div class="header">
+            <h1 id="texto-animated"></h1>
+          </div>
+          <div class="maze-container">
+            <!-- Imagen de carga dentro del contenedor principal -->
+            <img src="imagenes/loading.png" class="imagen-loading" />
+          </div>
+      
+          <!-- La primera imagen proporcionada -->
+          <div class="button">
+      
+            <a href="laberintoEnd.html">
+      
+              <img src="imagenes/detener.png" />
+            
+            </a>
+      
+          </div>
+
+        </div> <!-- Cierre de la clase container -->
+
         <!-- Menu -->
         <div class="menu">
-            <a href="laberinto.html"> <div class="menuItem active">
+            <a href="index.html"> <div class="menuItem active">
                 <img src="imagenes/Iconos/laberintoSelectecd.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <h6>Laberinto</h6>
             </div> </a>
@@ -50,3 +71,18 @@
 
     </body>
 </html>
+
+
+<!--<script>
+  // Temporizador en milisegundos (por ejemplo, 5 segundos)
+  const tiempoDelay = 5000;
+
+  // Función para redireccionar a otra página
+  function redireccionar() {
+    window.location.href = "laberintoEnd.html";
+  }
+
+  // Llama a la función redireccionar después de cierto tiempo
+  setTimeout(redireccionar, tiempoDelay);
+</script>-->
+

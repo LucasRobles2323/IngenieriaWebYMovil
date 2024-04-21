@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Laberinto encontrado</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--estilos-->
-        <link rel="stylesheet" href="css/laberintoEnd.css" type="text/css"/> 
+        <link rel="stylesheet" href="css/laberintos.css">
         <link rel="stylesheet" href="css/menu.css" type="text/css"/>
         
         <!--javascript-->
@@ -31,10 +32,29 @@
             <img src="imagenes/arrowBack.png">
         </div>
 
+        <div class="container">
+          <div class="header">
+            <h1>Laberinto encontrado</h1>
+          </div>
+          <!-- Contenedor del laberinto -->
+          <div class="maze-container">
+            <!-- La imagen del laberinto -->
+            <img src="imagenes/maze.png" class="imagen-laberinto" />
+          </div>
+          <!-- El botón con la imagen proporcionada -->
+          <div class="button">
+      
+            <a href="index.html">
+              <img src="imagenes/reiniciar.png"  />
+            </a>
+      
+          </div>
+        </div> <!-- Cierre de la clase container -->
+
         
         <!-- Menu -->
         <div class="menu">
-            <a href="laberinto.html"> <div class="menuItem active">
+            <a href="index.html"> <div class="menuItem active">
                 <img src="imagenes/Iconos/laberintoSelectecd.png" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <h6>Laberinto</h6>
             </div> </a>
@@ -48,5 +68,8 @@
             </div> </a>
         </div>
 
+
     </body>
+
+
 </html>
