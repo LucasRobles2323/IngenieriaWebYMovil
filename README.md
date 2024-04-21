@@ -57,54 +57,41 @@ Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde 
 > [!NOTE]
 > Debe incluir los archivos de maquetación en la carpeta respectiva, e incluir una breve descripción de dichos archivos.
 
-[js-badge-sm]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat
-[js-web]: https://developer.mozilla.org/es/docs/Web/JavaScript
-[ts-badge-sm]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat
-[ts-web]: https://www.typescriptlang.org/
-[html5-badge-sm]: https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat
-[html5-web]: https://developer.mozilla.org/es/docs/Web/HTML
-[css3-badge-sm]: https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat
-[css3-web]: https://developer.mozilla.org/es/docs/Web/CSS
-[tailwind-badge-sm]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=fff&style=flat
-[tailwind-web]: https://tailwindcss.com/
-[react-badge-sm]: https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=fff&style=flat
-[react-web]: https://reactjs.org/
-[angular-badge-sm]: https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=fff&style=flat
-[angular-web]: https://angular.io/
-[nodejs-badge-sm]: https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=fff&style=flat
-[nodejs-web]: https://nodejs.org/
-[express-badge-sm]: https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=fff&style=flat
-[express-web]: https://expressjs.com/
-[mongodb-badge-sm]: https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=fff&style=flat
-[mongodb-web]: https://www.mongodb.com/
-[postgresql-badge-sm]: https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=fff&style=flat
-[postgresql-web]: https://www.postgresql.org/
-[mysql-badge-sm]: https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat
-[mysql-web]: https://www.mysql.com/
-[git-badge-sm]: https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=flat
-[git-web]: https://git-scm.com/
-[github-badge-sm]: https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat
-[github-web]: https://github.com
-[npm-badge-sm]: https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=flat
-[npm-web]: https://www.npmjs.com/
-[yarn-badge-sm]: https://img.shields.io/badge/Yarn-2C8EBB?logo=yarn&logoColor=fff&style=flat
-[yarn-web]: https://yarnpkg.com/
-[prettier-badge-sm]: https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat
-[prettier-web]: https://prettier.io/
-[eslint-badge-sm]: https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat
-[eslint-web]: https://eslint.org/
-[vscode-badge-sm]: https://img.shields.io/badge/Visual_Studio_Code-007ACC?logo=visual-studio-code&logoColor=fff&style=flat
-[vscode-web]: https://code.visualstudio.com/
-[ionic-badge-sm]: https://img.shields.io/badge/Ionic-3880FF?logo=ionic&logoColor=fff&style=flat
-[ionic-web]: https://ionicframework.com/
-[figma-badge-sm]: https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=flat
-[figma-web]: https://www.figma.com/
-[ios-development-badge-sm]: https://img.shields.io/badge/iOS_Development-000000?logo=ios&logoColor=fff&style=flat
-[ios-development-web]: https://developer.apple.com/ios/
-[android-development-badge-sm]: https://img.shields.io/badge/Android_Development-3DDC84?logo=android&logoColor=fff&style=flat
-[android-development-web]: https://developer.android.com/
+### Herramienta necesaria
 
-[figma-prot-badge]: https://img.shields.io/badge/Ver%20prototipo%20en%20Figma-F24E1E?logo=figma&logoColor=fff&style=flat
-[figma-prot-url]: https://www.figma.com/file/tohZZDbyGVSBx4Ei6HKVq6/Web-y-Robotica?type=design&node-id=1%3A3&mode=design&t=3yznKTGzGxYGXfRy-1 
-[figma-dis-badge]: https://img.shields.io/badge/Ver%20diseño%20UI%20en%20Figma-F24E1E?logo=figma&logoColor=fff&style=flat
-[figma-dis-url]: https://www.figma.com/proto/tohZZDbyGVSBx4Ei6HKVq6/Web-y-Robotica?type=design&node-id=8-68&t=tomM2kdyr1irPSbD-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A68&mode=design
+Se debe tener instalada la extencion **Live Server** en **Visual Studio Code** ![Live_Server_Extension](Otros//ImagenesReadme/Extension_Necesaria.png)
+
+### Como ejecutar
+
+Se debe descargar el archivo https://github.com/LucasRobles2323/Proyecto_Ingenieria_Web_Y_Movil.git y abrir la carpeta Maquetación con **Visual Studio Code**.
+
+Luego, en VSCode con maquetacion abierta, seleccionar con click derecho el archivo **index.html** y seleccionar **Open with Live Server** ![OpenServer](Otros//ImagenesReadme/OpenServer.png)
+
+Y se abrira la aplicación en el navegador web.
+
+
+### **A tener en cuenta**
+
+#### **Aplicación Movil**
+
+Esta aplicación es una **APLICACIÓN MOVIL**, por ende es recomendado verlo en pantalla de telefono.
+
+Para ello, en el navegador se debe ir a herramientas para desarrolladores ![Desarrollador](Otros//ImagenesReadme/HerramientasDesarrollador.png)
+
+Una vez hecho eso, hacer click en un icono donde sale un celular con un computador de fondo, como se señala en la siguiente imagen (el icono de azul) ![PhoneView](Otros//ImagenesReadme/ModoCelular.png)
+
+Ahora esta listo para tener la mejor experiencia probando esta aplicación.
+
+#### **¿Pantalla Inaccesible?**
+
+Esta consideración es por si no es capaz de acceder a la pantalla **Laberinto Encontrado**:
+![LaberintoEncontrado](Otros//ImagenesReadme/LaberintoEnd.png)
+
+Primero tiene que estar en la pantalla inicial, donde debe hacer click en el boton iniciar
+![Laberinto](Otros//ImagenesReadme/LaberintoStart.png)
+
+
+Sera llevado a la siguiente pantalla, donde solo tiene que esperar 3 segundos (5 si cuenta rapido):
+![LaberintoLoad](Otros//ImagenesReadme/LaberintoLoad.png)
+
+Esto se debe al script laberintoLoad.js que al esperar cierto tiempo nos lleva a la pantalla **Laberinto Encontrado**
