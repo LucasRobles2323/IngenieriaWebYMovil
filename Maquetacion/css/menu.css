@@ -83,3 +83,11 @@ body {
         color: rgb(136, 0, 21);
     }
 }
+
+
+/* Animación */
+
+.button:hover {
+    transform: scale(0.8);
+    background-color: transparent;
+}

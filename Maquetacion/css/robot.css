@@ -100,9 +100,142 @@ div.party div.botomParty img{
     height: auto;
 }
 
+
+/* Decoración */
+div.rectangule{
+    position: absolute;
+    width: 50%s;
+}
+
+div.rDown{
+    bottom: 10px;
+}
+
+div.rUp{
+    display: block;
+    top: 20px;
+}
+
+div.square{
+    position: absolute;
+    width: 20%s;
+}
+
+div.rLeft{
+    transform: translate(170px, 250px);
+}
+
+div.rRight{
+    transform: translate(-170px, 250px);
+}
+
+div.onlyWeb{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 600px;
+    
+
+    > div.imgL{
+        
+        > img{
+            display: block;
+            width: 500px;
+            height: auto;
+        }
+    }
+
+    > div.imgR{
+
+        > img{
+            display: block;
+            width: 500px;
+            height: auto;
+        }
+    }
+}
+
+/* Menor Resolucion */
+
+@media screen and (max-width: 1400px) {
+    div.onlyWeb{
+        gap: 390px;
+
+        > div.imgL{
+            
+            > img{
+                display: block;
+                width: 350px;
+                height: auto;
+            }
+        }
+
+        > div.imgR{
+
+            > img{
+                display: block;
+                width: 350px;
+                height: auto;
+            }
+        }
+    }
+
+    div.rUp{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.onlyWeb{
+        gap: 360px;
+
+        > div.imgL{
+            
+            > img{
+                display: block;
+                width: 300px;
+                height: auto;
+            }
+        }
+
+        > div.imgR{
+
+            > img{
+                display: block;
+                width: 300px;
+                height: auto;
+            }
+        }
+    }
+
+    div.rUp{
+        display: none;
+    }
+}
+
+
+/* Pantalla de celular */
 @media screen and (max-width: 768px) {
     div.party div.botomParty img{
-        width: 300px;
+        width: 250px;
         height: auto;
+    }
+
+    div.onlyWeb{
+        display: none;
+    }
+
+    div.rUp{
+        display: block;
+    }
+
+    div.rLeft{
+        transform: translate(150px, 200px);
+    }
+    
+    div.rRight{
+        transform: translate(-150px, 200px);
     }
 }

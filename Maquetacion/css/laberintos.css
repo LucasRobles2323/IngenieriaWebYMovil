@@ -40,11 +40,11 @@
   object-fit: contain;
 }
 
-.button {
-  max-width: 28%; /* Ancho máximo del botón */
+.buttonL {
+  max-width: 24%; /* Ancho máximo del botón */
 }
 
-.button img {
+.buttonL img {
   width: 100%;
   height: auto;
 }
@@ -57,7 +57,7 @@
     height: 50vh; /* Altura máxima del contenedor del laberinto */
   }
 
-  .button {
+  .buttonL {
     max-width: 70%; /* Ancho máximo del botón */
   }
 }
@@ -100,7 +100,7 @@
 
 
 
-.button:hover {
+.buttonL:hover {
   transform: scale(1.05);
   background-color: transparent;
 }
