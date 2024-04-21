@@ -10,13 +10,47 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <h1 class="title">Cargando . . .  </h1>
-    </header>
-    <div class="maze-container"></div>
+    <div class="header">
+      <h1 id="texto-animated"></h1>
+    </div>
+    <div class="maze-container">
+      <!-- Imagen de carga dentro del contenedor principal -->
+      <img src="imagenes/loading.png" class="imagen-loading" />
+    </div>
+
     <!-- La primera imagen proporcionada -->
-    <a href="#">
-      <img src="imagenes/Detener.png"  class="start-button" />
-    </a>
+    <div class="button">
+
+      <a href="laberintoEnd.html">
+
+        <img src="imagenes/detener.png" />
+      
+      </a>
+
+    </div>
+  
+  
+  </div> <!-- Cierre de la clase container -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!--<script>
+  // Temporizador en milisegundos (por ejemplo, 5 segundos)
+  const tiempoDelay = 5000;
+
+  // Función para redireccionar a otra página
+  function redireccionar() {
+    window.location.href = "laberintoEnd.html";
+  }
+
+  // Llama a la función redireccionar después de cierto tiempo
+  setTimeout(redireccionar, tiempoDelay);
+</script>-->
