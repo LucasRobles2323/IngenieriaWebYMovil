@@ -36,7 +36,7 @@ div.centerText{
         overflow-x: hidden;
         overflow-y: scroll;
         width: 100%;
-        max-height: 400px;
+        max-height: 550px;
         display: flex;
         flex-direction: column;
     
@@ -56,6 +56,12 @@ div.centerText{
                 cursor: pointer;
                 margin: 5px 16px 30px 16px;
                 border-radius: 12px;
+            }
+
+            > button:hover {
+                background-color: white;
+                border: 1px solid black;
+                color: black;
             }
       
             > input {
@@ -120,6 +126,12 @@ div.centerText{
                     border-radius: 60px;
                 }
             }
+
+            > button#google:hover {
+                background-color: white;
+                border: 1px solid black;
+                color: red;
+            }
     
             .final{
                 margin-top: 20px;
@@ -160,6 +172,12 @@ div.centerText{
             cursor: pointer;
             margin: 5px 16px 30px 16px;
             border-radius: 12px;
+        }
+
+        > button:hover {
+            background-color: white;
+            border: 1px solid black;
+            color: black;
         }
   
         > input {
@@ -202,6 +220,12 @@ div.centerText{
             }
         }
 
+        > button#google:hover {
+            background-color: white;
+            border: 1px solid black;
+            color: red;
+        }
+
         .final{
             margin-top: 20px;
             text-align: center;
@@ -219,7 +243,20 @@ div.centerText{
                 font-weight: bold;
                 text-decoration: underline;
             }
+
+            > a:hover { 
+                color: red;
+            }
         }
 
+    }
+
+
+    /* Pantalla de celular */
+    @media screen and (max-width: 768px) {
+        
+        div.scroll{
+            max-height: 450px;
+        }
     }
 }
