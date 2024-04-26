@@ -1,2 +1,22 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+// Define los colores de fondo de las pestañas
+
+ion-tab-button {
+    --background: rgb(59, 141, 201); // Cambia el color de fondo de las pestañas
+
+    --color-selected: rgb(136, 0, 21); // Cambia el color de la pestaña activa
+
+    --color: black; // Cambia el color del texto de las pestañas
+}
+
+ion-img {
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+ion-content {
+    --background: rgb(89, 185, 255); // Aplica el color de fondo definido en variables.scss al contenido de la pestaña uno
+}
