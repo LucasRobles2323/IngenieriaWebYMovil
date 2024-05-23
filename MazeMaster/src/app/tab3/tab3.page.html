@@ -1,3 +1,39 @@
 <ion-content [fullscreen]="true">
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    
+  <ion-title>Inicio de Sesión</ion-title>
+
+  <ion-item lines="none">
+    <ion-input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Correo electrónico"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Contraseña"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" type="submit">Iniciar sesión</ion-button>
+
+  <div class="centerText">
+    <p>o continue con</p>
+  </div>
+  
+  <ion-button expand="block" id="google" type="submit">
+    <ion-img slot="start" src="../../assets/icon/googleIcon.png" alt=""></ion-img>
+    Google
+  </ion-button>
+  
+  <div class="final">
+    <p>Si no posees cuenta, puedes registrarte </p>
+    <a href="#">Crear una cuenta nueva </a>
+  </div>
+  
 </ion-content>
