@@ -9,12 +9,21 @@ ion-tab-button {
     --color-selected: rgb(136, 0, 21); // Cambia el color de la pestaña activa
 
     --color: black; // Cambia el color del texto de las pestañas
+
+    ion-img {
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+    }
 }
 
-ion-img {
-    background-size: contain;
-    width: 24px;
-    height: 24px;
+ion-header {
+    text-align: center;
+
+    ion-toolbar{
+        --background: rgb(14, 46, 69); // Aplica el color de fondo definido en variables.scss al contenido de la pestaña uno
+        --color: white; // Cambia el color del texto de las pestañas
+    }
 }
 
 ion-content {
