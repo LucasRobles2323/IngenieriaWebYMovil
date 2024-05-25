@@ -3,15 +3,6 @@ ion-content {
     --ion-safe-area-bottom: auto; /* Evita el espacio seguro en la parte inferior */
 }
 
-.center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    flex-direction: column; /* To align items vertically */
-}
-
 form{
     width: 95%;
 }
@@ -24,8 +15,6 @@ ion-item {
 }
   
 ion-button {
-    width: 100%;
-
     --background: #000000;
     --color: #ffffff;
 

@@ -29,3 +29,23 @@ ion-header {
 ion-content {
     --background: rgb(89, 185, 255); // Aplica el color de fondo definido en variables.scss al contenido de la pestaña uno
 }
+
+ion-button {
+    width: 100%;
+    font-size: 100%;
+
+    ion-text.button {
+        font-size: 200%;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    flex-direction: column; /* To align items vertically */
+}
