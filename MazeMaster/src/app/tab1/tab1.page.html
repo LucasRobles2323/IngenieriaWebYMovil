@@ -4,16 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding">
   <div class="center-content">
 
-    <ion-img src="assets/maze.png" alt="Imagen de laberinto"></ion-img>
+    <div class="image-container">
+      <ion-img src="assets/maze.png" alt="Imagen de laberinto"></ion-img>
+    </div>
 
     <!-- Tu botón de iniciar con el id "open-loading" -->
-    <ion-button routerLink="laberinto-end" class="ion-padding ion-text-center" expand="block">
+    <ion-button class="ion-padding ion-text-center" expand="block"  href="/laberinto-end" type="submit" class="glow-button">
+      
       <ion-text class="button">Iniciar</ion-text>
+      
     </ion-button>
 
+    <!-- Componente ion-loading que se activa con el trigger "open-loading" -->
+    <ion-loading trigger="open-loading" message="Encontrando Ruta..." duration="1000"></ion-loading>
+  
   </div>
-
 </ion-content>
