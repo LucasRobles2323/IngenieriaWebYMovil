@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from './usuario/usuario.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class Tab3Page {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private usuarioService: UsuarioService) 
+    private usuarioService: UsuarioService,
+    private route: ActivatedRoute) 
   {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -58,11 +59,10 @@ export class Tab3Page {
 
       if (usuarioValido) {
         alert('Inicio de sesión exitoso');
-        this.router.navigate(['/usuario']);
+        this.router.navigate(['usuario'], { relativeTo: this.route });
       } else {
         alert('Email o contraseña incorrectos');
       }})
-      this.router.navigate(['/usuario']);
     }
     else {
       alert('Por favor, complete los campos correctamente');

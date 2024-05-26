@@ -21,6 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Tab3PageRoutingModule {
-  routes = routes; // Define la propiedad 'routes' aquí
-}
+export class Tab3PageRoutingModule {}

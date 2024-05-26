@@ -49,11 +49,9 @@
 ion-button{
     --background: #2ef489;
     --color: #ffffff;
-     margin-top: 10px; /* Añade un margen superior para separación */
     --border-width: 7px; 
     --border-style: solid; 
-    --border-color: #0b331b; /* Ajusta el color del borde */
-    font-weight: bold;
+    --border-color: #0b331b;
 }
 
 .control-button ion-icon {
