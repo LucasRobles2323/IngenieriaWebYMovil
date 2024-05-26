@@ -1,16 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Inicio Sesion</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Inicio Sesion'"></app-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  
-  <div class="center-content">
-    
+
+  <div class="center-content">  
+
     <form [formGroup]="loginForm" class="ion-margin-top ion-padding">
       <ion-item lines="none">
         <ion-input
+          label="Correo electrónico"
+          labelPlacement="floating"
           formControlName="email"
           type="email"
           name="email"
@@ -20,21 +18,23 @@
       </ion-item>
       <div *ngIf="isEmailInvalid()" class="error-message">
         <p *ngIf="isEmailRequiredError()">*Este campo es obligatorio</p>
-        <p *ngIf="isEmailFormatError()">El correo electrónico no es válido.</p>
+        <p *ngIf="isEmailFormatError()">*El correo electrónico no es válido.</p>
       </div>
 
       <ion-item lines="none">
-        <ion-input
+        <ion-input 
+          label="Contraseña"
+          labelPlacement="floating"
           formControlName="password"
           type="password"
           name="password"
           id="password"
-          placeholder="Contraseña"
+          placeholder="1234567"
         ></ion-input>
       </ion-item>
       <div *ngIf="isPasswordInvalid()" class="error-message">
         <p *ngIf="isPasswordRequiredError()">*Este campo es obligatorio</p>
-        <p *ngIf="isPasswordMinLengthError()">La contraseña debe tener al menos 6 caracteres.</p>
+        <p *ngIf="isPasswordMinLengthError()">*La contraseña debe tener al menos 6 caracteres.</p>
       </div>
     
     </form>
@@ -47,12 +47,12 @@
       <p>o continue con</p>
     </div>
     
-    <ion-button class="ion-padding ion-text-center" expand="block" id="google" type="submit">
+    <ion-button class="ion-padding ion-text-center" expand="block" (click)="noImplementado()" id="google" type="submit">
       <ion-img slot="start" src="../../assets/icon/googleIcon.png" alt=""></ion-img>
       Google
     </ion-button>
 
     <p>Si no posees cuenta, puedes registrarte</p>
-    <ion-text routerLink="registro">Crear una cuenta nueva</ion-text>
+    <ion-text (click)="goToRegister()">Crear una cuenta nueva</ion-text>
   </div>
 </ion-content>

@@ -32,15 +32,6 @@ ion-button {
     }
 }
 
-ion-header {
-    text-align: center;
-
-    ion-toolbar{
-        --background: rgb(14, 46, 69); // Aplica el color de fondo definido en variables.scss al contenido de la pestaña uno
-        --color: white; // Cambia el color del texto de las pestañas
-    }
-}
-
 .center-content {
     display: flex;
     justify-content: center;
@@ -48,6 +39,19 @@ ion-header {
     text-align: center;
     height: 100%;
     flex-direction: column; /* To align items vertically */
+}
+
+.image-container {
+    display: inline-block;
+    border: 10px solid #0b331b; /* Añade el borde aquí */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    height: 80%;
+    ion-img {
+      display: block;
+      background-size: contain;
+      height: 100%;
+      width: auto;
+    }
 }
 
 ion-list {

@@ -1,14 +1,4 @@
-.center-content {
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    height: 100vh; /* Altura total de la ventana */
-    padding: 0; /* Elimina el padding extra */
-  }
-
-
-  
-  .box {
+.box {
     border: 10px solid #203447;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,7 +26,6 @@
     --border-style: solid; 
     --border-color: #0b331b; /* Ajusta el color del borde */
     position: relative;
-    /* overflow: hidden; */
     text-align: center; /* Centra el texto dentro del botón */
     transition: box-shadow 0.3s ease-in-out; /* Transición para el efecto de sombra */
     width: 100px; /* Ancho del botón */

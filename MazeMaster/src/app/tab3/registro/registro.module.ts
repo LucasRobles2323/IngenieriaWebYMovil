@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 import { RegistroPageRoutingModule } from './registro-routing.module';
 import { RegistroPage } from './registro.page';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { RegistroPage } from './registro.page';
     FormsModule,
     IonicModule,
     ExploreContainerComponentModule,
+    SharedModule,
     RegistroPageRoutingModule
   ],
   declarations: [RegistroPage]

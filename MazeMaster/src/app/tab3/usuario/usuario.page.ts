@@ -13,11 +13,9 @@
     password: string = '';
     usuario!: Usuario;
 
-    constructor(private router: Router,
-      private usuarioService: UsuarioService,
-      private route: ActivatedRoute) { }
+    constructor(private router: Router, private usuarioService: UsuarioService, private route: ActivatedRoute) { }
 
-    returnPadre(){
+    goBack(){
       this.router.navigate(['../'], { relativeTo: this.route });
     }
 

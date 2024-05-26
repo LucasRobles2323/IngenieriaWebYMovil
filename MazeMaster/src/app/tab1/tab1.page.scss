@@ -1,31 +1,7 @@
-.center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  .image-container {
-    display: inline-block;
-    border: 10px solid #0b331b; /* Añade el borde aquí */
-    border-radius: 10px; /* Opcional: bordes redondeados */
-  }
-  
-  ion-img {
-    width: 100%;
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block;
-  }
-  
-  ion-button {
-    --background: #2ef489;
-    --color: #ffffff;
-     margin-top: 20px; /* Añade un margen superior para separación */
-    --border-width: 7px; 
-    --border-style: solid; 
-    --border-color: #0b331b; /* Ajusta el color del borde */
-  }
-  
-
-  
+ion-button {
+  --background: #2ef489;
+  --color: #ffffff;
+  --border-width: 7px; 
+  --border-style: solid; 
+  --border-color: #0b331b; /* Ajusta el color del borde */
+}

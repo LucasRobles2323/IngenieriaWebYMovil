@@ -68,4 +68,12 @@ export class Tab3Page {
       alert('Por favor, complete los campos correctamente');
     }
   }
+
+  goToRegister() {
+    this.router.navigate(['registro'], {relativeTo: this.route });
+  }
+
+  noImplementado(){
+    alert('Aun no esta implementado.');
+  }
 }

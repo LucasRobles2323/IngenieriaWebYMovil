@@ -1,15 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Laberinto</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Laberinto Completado'"></app-header>
 
 <ion-content  [fullscreen]="true" class="ion-padding">
+
   <div class="center-content">
+    
     <div class="image-container">
       <ion-img src="assets/LaberintoHecho.png" alt="Imagen de laberinto"></ion-img>
     </div>
-    <!-- Tu botón de iniciar con el id "open-loading" -->
+    
     <ion-button class="ion-padding ion-text-center" expand="block" (click)="returnLoading()">
       <ion-text class="button">Reiniciar</ion-text>
     </ion-button>
