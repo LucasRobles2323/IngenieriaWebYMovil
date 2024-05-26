@@ -6,9 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
-  },  {
+  },
+  {
     path: 'laberinto-end',
-    loadChildren: () => import('./laberinto-end/laberinto-end.module').then( m => m.LaberintoEndPageModule)
+    loadChildren: () => import('../tab1/laberinto-end/laberinto-end.module').then( m => m.LaberintoEndPageModule)
   }
 
 ];
