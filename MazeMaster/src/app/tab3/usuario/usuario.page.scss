@@ -1,0 +1,24 @@
+ion-list{
+    background-color: rgb(14, 46, 69);
+}
+
+ion-img.usuarioImage {
+    background-size: contain;
+    margin-right: 10px;
+    width: 30%;
+    height: auto;
+}
+  
+div.usuarioDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+  
+div.usuarioDetails ion-label:first-child {
+    font-weight: bold;
+}
+
+ion-item{
+    padding: 10px;
+}

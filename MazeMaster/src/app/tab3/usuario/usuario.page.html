@@ -4,9 +4,47 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  [fullscreen]="true" class="ion-padding">
+<ion-content  [fullscreen]="true">
   <div class="center-content">
+
+    <ion-list *ngIf="usuario" lines="full">
+      <ion-item>
+        <ion-img class="usuarioImage" src="../../assets/UsuarioImage.png"> </ion-img>
+        <div class="usuarioDetails">
+          <ion-label>Nombre:</ion-label>
+          <ion-label>{{usuario.nombre}}</ion-label>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <div class="usuarioDetails">
+          <ion-label>Email:</ion-label>
+          <ion-label>{{ usuario.email }}</ion-label>
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <div class="usuarioDetails">
+          <ion-label>Rut:</ion-label>
+          <ion-label>{{ usuario.rut }}</ion-label>
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <div class="usuarioDetails">
+          <ion-label>Región:</ion-label>
+          <ion-label>{{ usuario.region }}</ion-label>
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <div class="usuarioDetails">
+          <ion-label>Comuna:</ion-label>
+          <ion-label>{{ usuario.comuna }}</ion-label>
+        </div>
+      </ion-item>
     
+    </ion-list>
   
   </div>
 

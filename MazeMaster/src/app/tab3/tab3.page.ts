@@ -59,7 +59,7 @@ export class Tab3Page {
 
       if (usuarioValido) {
         alert('Inicio de sesión exitoso');
-        this.router.navigate(['usuario'], { relativeTo: this.route });
+        this.router.navigate(['usuario'], {queryParams: { email, password }, relativeTo: this.route });
       } else {
         alert('Email o contraseña incorrectos');
       }})
