@@ -6,16 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
-    children:  [
-    {
-      path: 'registro',
-      loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
-    },
-    {
-      path: 'usuario',
-      loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioPageModule)
-    }]
-}];
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('../tab3/registro/registro.module').then( m => m.RegistroPageModule),
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => import('../tab3/usuario/usuario.module').then( m => m.UsuarioPageModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
