@@ -28,6 +28,13 @@ ion-button {
     --background: #000000;
     --color: #ffffff;
 
+    ion-icon {
+        background-size: contain;
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+    }
+
     &[id="google"]{
         --background: #ffffff;
         --color: #000000;

@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from './usuario/usuario.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit {
   loginForm: FormGroup;
+  isLoggedIn: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
+    private authService: AuthenticationService,
     private usuarioService: UsuarioService,
+    private router: Router,
     private route: ActivatedRoute) 
   {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
+
+  ngOnInit() {
+    this.authService.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
     });
   }
 
@@ -58,7 +67,11 @@ export class Tab3Page {
       const usuarioValido = this.usuarioService.validarUsuario(email, password, usuarios);
 
       if (usuarioValido) {
-        alert('Inicio de sesión exitoso');
+        // Guardar información de sesión en el almacenamiento local
+        localStorage.setItem('session', JSON.stringify({ loggedIn: true }));
+        // Actualizar estado de isLoggedIn
+        this.isLoggedIn = true;
+
         this.router.navigate(['usuario'], {queryParams: { email, password }, relativeTo: this.route });
       } else {
         alert('Email o contraseña incorrectos');

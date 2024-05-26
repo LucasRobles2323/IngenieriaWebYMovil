@@ -19,6 +19,17 @@ div.usuarioDetails ion-label:first-child {
     font-weight: bold;
 }
 
-ion-item{
-    padding: 10px;
+ion-button{
+    --background: red;
+    --color: #ffffff;
+    --border-width: 7px; 
+    --border-style: solid; 
+    --border-color: #350707;; /* Ajusta el color del borde */
+    
+    ion-icon {
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
 }

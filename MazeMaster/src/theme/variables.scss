@@ -58,6 +58,7 @@ ion-list {
     --background: rgb(14, 46, 69); /* Define el color de fondo de ion-list */
     --color: white; /* Define el color de texto de ion-list */
     --border-color: rgb(14, 46, 69);
+    max-height: 80%;
 
     ion-item {
         --background: inherit; /* Cambia el color de fondo de ion-item */
