@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class Tab3Page {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -44,7 +45,7 @@ export class Tab3Page {
 
   login() {
     if (this.loginForm.valid) {
-      alert('Inicio de sesión exitoso');
+      this.router.navigate(['/registro']);
     } else {
       alert('Por favor, complete los campos correctamente');
     }

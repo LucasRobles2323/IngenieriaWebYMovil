@@ -8,10 +8,6 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-      path: 'laberinto-end',
-      loadChildren: () => import('../tab1/laberinto-end/laberinto-end.module').then(m => m.LaberintoEndPageModule)
-      },
-      {
         path: 'tab1',
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
