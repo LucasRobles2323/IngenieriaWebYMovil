@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-laberinto-end',
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaberintoEndPage implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router,  private route: ActivatedRoute) { }
 
+  returnLoading() {
+    
+    this.router.navigate(['../'], { relativeTo: this.route });
+    console.log('Returned dimissed');
+  }
   ngOnInit() {
   }
 

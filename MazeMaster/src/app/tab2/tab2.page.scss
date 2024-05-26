@@ -1,23 +1,24 @@
 .center-content {
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    height: 100vh; /* Asegura que el contenedor tome toda la altura de la ventana */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Altura total de la ventana */
     padding: 0; /* Elimina el padding extra */
-}
+  }
 
-.box {
+
+  
+  .box {
     border: 10px solid #203447;
-    border-radius: 15   px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #264c74; /* Fondo gris oscuro */
     padding: 16px; /* Espaciado interno */
-    width: 100%; /* Ancho completo del contenedor */
-    max-width: 600px; /* Ancho máximo para un mejor aspecto */
     opacity: 1; /* Opacidad ajustada */
     display: flex; /* Flexbox para centrar el contenido */
-    flex-direction: column; /* Dirección de columna para los elementos internos */
-    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin: 20px;
 }
 
 .remote-control {
@@ -52,6 +53,13 @@ ion-button{
     --border-width: 7px; 
     --border-style: solid; 
     --border-color: #0b331b;
+}
+
+.party-button{
+    height: 15%;
+    align-items: center;
+    font-size: 200%;
+
 }
 
 .control-button ion-icon {

@@ -6,11 +6,11 @@
 
 <ion-content  [fullscreen]="true" class="ion-padding">
   <div class="center-content">
-
-    <ion-img src="assets/maze.png" alt="Imagen de laberinto"></ion-img>
-
+    <div class="image-container">
+      <ion-img src="assets/LaberintoHecho.png" alt="Imagen de laberinto"></ion-img>
+    </div>
     <!-- Tu botón de iniciar con el id "open-loading" -->
-    <ion-button routerLink="../" class="ion-padding ion-text-center" expand="block">
+    <ion-button class="ion-padding ion-text-center" expand="block" (click)="returnLoading()">
       <ion-text class="button">Reiniciar</ion-text>
     </ion-button>
     

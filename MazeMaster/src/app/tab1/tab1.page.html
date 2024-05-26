@@ -12,14 +12,10 @@
     </div>
 
     <!-- Tu botón de iniciar con el id "open-loading" -->
-    <ion-button class="ion-padding ion-text-center" expand="block"  href="/laberinto-end" type="submit" class="glow-button">
+    <ion-button class="ion-padding ion-text-center" expand="block"  (click)="presentLoading()" type="submit">
       
       <ion-text class="button">Iniciar</ion-text>
       
-    </ion-button>
-
-    <!-- Componente ion-loading que se activa con el trigger "open-loading" -->
-    <ion-loading trigger="open-loading" message="Encontrando Ruta..." duration="1000"></ion-loading>
-  
+    </ion-button>  
   </div>
 </ion-content>
