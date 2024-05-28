@@ -65,6 +65,8 @@ Al ingresar un email y contraseña que corresponden a usuarios guardados, se env
 }]
 ~~~
 
+No se guardan los datos de registro de sesión, porque no se permite modificar archivos desde el backend, asi que no se puede guardar en el json.
+
 ### EP2.3
 
 En la carpeta BD_SQL se creo una base de datos inicial para la aplicación con los datos que consideramos importantes considerar.

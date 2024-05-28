@@ -4,7 +4,6 @@
     "rut": "21.332.121-3",
     "email": "lujuabraes@mail.com",
     "region": "Región de Valparaíso",
-    "comuna": "Viña del Mar",
     "password": "1234567",
     "isAdmin": false
 },
@@ -14,7 +13,6 @@
     "rut": "21.332.432-k",
     "email": "jumabrago@mail.com",
     "region": "Región de Valparaíso",
-    "comuna": "Valparaíso",
     "password": "7654321",
     "isAdmin": true
 }]

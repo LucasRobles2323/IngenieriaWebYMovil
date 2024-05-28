@@ -4,7 +4,6 @@ export interface Usuario {
     rut: string;
     email: string;
     region: string;
-    comuna: string;
     password: string;
     isAdmin: boolean;
 }
