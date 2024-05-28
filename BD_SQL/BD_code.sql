@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `rut` VARCHAR(15) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `region` VARCHAR(300) NOT NULL,
-  `comuna` VARCHAR(300) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   `isAdmin` BOOLEAN NOT NULL,
   PRIMARY KEY (`idUsuario`),
