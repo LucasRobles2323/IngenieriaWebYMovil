@@ -1,0 +1,20 @@
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="resolver-laberinto" layout="icon-start">
+      <ion-img class="maze" src="../../../assets/icon/laberinto.png"></ion-img>
+      <ion-label *ngIf="selectedTab == 'resolver-laberinto'">Laberinto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="control-robot" layout="icon-start">
+      <ion-img class="robot" src="../../../assets/icon/robot.png"> </ion-img>
+      <ion-label *ngIf="selectedTab == 'control-robot'">Control Robot</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="inicio-sesion" layout="icon-start">
+      <ion-img class="user" src="../../../assets/icon/usuario.png"> </ion-img>
+      <ion-label *ngIf="selectedTab == 'inicio-sesion'">Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

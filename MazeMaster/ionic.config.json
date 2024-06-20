@@ -1,7 +1,0 @@
-{
-  "name": "MazeMaster",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
