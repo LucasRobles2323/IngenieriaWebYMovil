@@ -12,7 +12,6 @@ import { FormError, mensajesErr } from 'src/app/misc/form-errors';
 })
 export class InicioSesionPage implements OnInit {
   loginForm: FormGroup;
-  isLoggedIn: boolean = false;
 
   constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.loginForm = this.fb.group({
@@ -28,22 +27,6 @@ export class InicioSesionPage implements OnInit {
   // Método que se ejecuta al completar formularo y presionar el boton
   onSubmit() {
     console.log(this.loginForm.value);
-
-    const email = this.loginForm.get('email')?.value;
-    const password = this.loginForm.get('password')?.value;
-
-    if( (email == "lux23@mail.com" && password == "1234567") || (email == "ger32@mail.com" && password == "7654321")){
-      // Guardar información de sesión en el almacenamiento local
-      localStorage.setItem('session', JSON.stringify({ loggedIn: true }));
-      // Actualizar estado de isLoggedIn
-      this.isLoggedIn = true;
-
-      this.router.navigate(['sesion-usuario'], {queryParams: { email, password }, relativeTo: this.route });
-    }
-    else{
-      alert('Email o contraseña incorrectos');
-    }
-
   }
 
   // Método para dirigirse a la pagina registro de usuario.
