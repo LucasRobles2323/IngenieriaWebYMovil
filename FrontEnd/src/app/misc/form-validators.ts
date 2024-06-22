@@ -45,9 +45,9 @@ export const rutValidator: ValidatorFn = (
   if (!rut) {
     return null;
   }
-  console.log('RUT ingresado:', rut);
+  //console.log('RUT ingresado:', rut);
   const dvValid = validaDV(rut);
-  console.log('dvValid:', dvValid);
+  //console.log('dvValid:', dvValid);
   const formatValid = /^[0-9]{7,8}-[0-9Kk]{1}$/.test(rut);
   return formatValid ? (dvValid ? null : { rutDv: true }) : { rutFormat: true };
 };

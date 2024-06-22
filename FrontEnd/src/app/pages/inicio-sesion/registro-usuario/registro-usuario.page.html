@@ -48,9 +48,9 @@
       
       <ion-item lines="none">
         <ion-input
-          label="Contraseña"
+          label="Confirmar Contraseña"
           labelPlacement="floating"
-          formControlName="password"
+          formControlName="passwordConfirm"
           type="password"
           placeholder="1234567"
           [errorText]="formError('passwordConfirm')"
@@ -66,7 +66,7 @@
         >
           <div slot="label">Región <ion-text color="danger">(requerido)</ion-text></div>
       
-          <ion-select-option *ngFor="let region of regiones" [value]="region">
+          <ion-select-option *ngFor="let region of regiones" [value]="region.nombre">
             {{ region.nombre }}
           </ion-select-option>
 
