@@ -142,7 +142,7 @@ def logout():
         cursor.execute("DELETE FROM sesiones WHERE email = %s", (current_user,))
         db.commit()
         cursor.close()
-        jsonify({"message": "Logout exitoso"}), 200
+        return jsonify({"message": "Logout exitoso"}), 200
     except mysql.connector.Error as err:
         return jsonify({"error": str(err)}), 400
 

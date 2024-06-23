@@ -1,3 +1,5 @@
+<app-header [title]="'Inicio Sesión'"></app-header>
+
 <ion-content [fullscreen]="true" class="ion-padding">
 
     <div class="center-content">  
@@ -30,7 +32,7 @@
       </form>
   
       <ion-button (click)="login()"
-        class="ion-padding ion-text-center"
+        class="ion-padding"
         expand="block" 
         type="button"
         [disabled]="!loginForm.valid">

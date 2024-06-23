@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ControlRobotPageRoutingModule } from './control-robot-routing.module';
 
 import { ControlRobotPage } from './control-robot.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     ControlRobotPageRoutingModule
   ],
   declarations: [ControlRobotPage]

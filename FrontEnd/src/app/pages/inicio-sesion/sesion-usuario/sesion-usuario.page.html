@@ -1,13 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Sesión de Usuario</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Usuario'"></app-header>
 
-<ion-content  class="ion-padding">
+<ion-content [fullscreen]="true">
   
   <div class="center-content">
 
@@ -19,7 +12,7 @@
       <ion-card-content *ngIf="currentUser">
         <ion-list lines="full">
           
-          <ion-item>
+          <ion-item *ngIf="currentUser.email">
             <ion-label>Email:</ion-label>
             <ion-label>{{ currentUser.email }}</ion-label>
           </ion-item>
@@ -48,12 +41,28 @@
       </ion-card-content>
     </ion-card>
     
-    <ion-button expand="full" (click)="editUser()">Editar Usuario</ion-button>
-    <ion-button expand="full" (click)="changePassword()">Cambiar Contraseña</ion-button>
+    <ion-button expand="block" class="ion-padding" 
+      (click)="editUser()">Editar Usuario
+    </ion-button>
+    
+    <ion-button expand="block" class="ion-padding" 
+      (click)="changePassword()">
+      Cambiar Contraseña
+    </ion-button>
 
-    <ion-button *ngIf="currentUser && currentUser.isAdmin" expand="full" color="tertiary" (click)="manageUsers()">Gestionar Usuarios</ion-button>
+    <ion-button expand="block" class="out-button ion-padding" 
+      (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Cerrar Sesión
+    </ion-button>
 
-    <ion-button expand="full" class="out-button" (click)="deleteAccount()">
+    <ion-button *ngIf="currentUser && currentUser.isAdmin" expand="block" class="ion-padding"
+     (click)="manageUsers()">
+     Gestionar Usuarios
+    </ion-button>
+
+    <ion-button expand="block" class="out-button ion-padding" 
+      (click)="deleteAccount()">
       <ion-icon name="log-out-outline"></ion-icon>
       Eliminar Cuenta
     </ion-button>
