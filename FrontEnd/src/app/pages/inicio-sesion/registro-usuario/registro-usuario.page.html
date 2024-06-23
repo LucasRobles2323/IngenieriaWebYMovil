@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content>
   <div class="center-content"> 
     <form [formGroup]="registerForm" class="ion-margin-top ion-padding">
 
@@ -90,8 +90,8 @@
     </form>
 
     <ion-button 
-          class="ion-padding ion-text-center"
-          (click)="onSubmit()"
+          class="ion-padding"
+          (click)="register()"
           expand="block" 
           type="button"
           [disabled]="!registerForm.valid">
@@ -99,12 +99,11 @@
           Registrar Usuario
         </ion-button>
 
-    <div class="ion-text-center">
+    <div class="ion-padding ion-text-center">
       <p>Al registrarse usted acepta nuestros <ion-text>Terminos de Servicio</ion-text> y <ion-text>Politica de privacidad</ion-text>.</p>
     </div>
     
-    <ion-button 
-        class="ion-padding ion-text-center"
+    <ion-button class="ion-padding"
         (click)="goToLogin()"
         expand="block" 
         type="button">

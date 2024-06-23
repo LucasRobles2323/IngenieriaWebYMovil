@@ -74,22 +74,22 @@ export class RegistroUsuarioPage implements OnInit {
     }
   }
 
-  onSubmit() {
+  register() {
     if (this.registerForm.valid) {
+      // Aqui se registra el usuari en la vd y se redirige a inicio sesion
       this.usuariosService.createUser(this.registerForm.value).subscribe(
         response => {
           console.log(response);
           alert("Registrado exitosamente");
-          this.router.navigate(['inicio-sesion']);
+          this.redirigirInicioSesion();
         },
       );
     }
-    console.log(this.registerForm.value);
   }
 
   // Método para dirigirse a la pagina inicio sesión.
   goToLogin() {
-    this.router.navigate(['inicio-sesion']);
+    this.redirigirInicioSesion();
   }
 
   /**
@@ -105,4 +105,8 @@ export class RegistroUsuarioPage implements OnInit {
     return null;
   }
 
+  // Método para dirigirse a la pagina registro de usuario.
+  private redirigirInicioSesion() {
+    this.router.navigate(['inicio-sesion']);
+  }
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-
 import { FormError, mensajesErr } from 'src/app/misc/form-errors';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -13,7 +14,8 @@ import { FormError, mensajesErr } from 'src/app/misc/form-errors';
 export class InicioSesionPage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router,
+              private authService: AuthService, private tokenStorage: TokenStorageService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]]
@@ -21,17 +23,40 @@ export class InicioSesionPage implements OnInit {
   }
 
   ngOnInit() {
+    // Verificar si hay sesión iniciada al cargar la página, si la hay ir a sesion usuario
+    const token = this.tokenStorage.getToken();
+    if (token) {
+      // Redirigir a la página de sesión de usuario si hay un token válido
+      this.redirigirSesionUsuario();
+    }
 
   }
+  
+  // Método que se ejecuta al completar formulario y presionar el botón
+  login() {
+    if (this.loginForm.valid) {
 
-  // Método que se ejecuta al completar formularo y presionar el boton
-  onSubmit() {
-    console.log(this.loginForm.value);
+      const { email, password } = this.loginForm.value;
+  
+      // Log the payload to the console
+      console.log('Sending login request with payload:', { email, password });
+
+      this.authService.login(email, password).subscribe(
+        () => {
+          console.log('Login exitoso');
+
+          this.redirigirSesionUsuario();
+        },
+        error => {
+          console.error('Error en el inicio de sesión:', error);
+        }
+      );
+    }
   }
 
   // Método para dirigirse a la pagina registro de usuario.
   goToRegister() {
-    this.router.navigate(['registro-usuario'], {relativeTo: this.route });
+    this.redirigirRegistro();
   }
 
   /**
@@ -50,4 +75,14 @@ export class InicioSesionPage implements OnInit {
     return null;
   }
 
+  private redirigirSesionUsuario(){
+    this.router.navigate(['inicio-sesion/sesion-usuario']);
+    //this.router.navigate(['sesion-usuario'], {relativeTo: this.route });
+  }
+
+  // Método para dirigirse a la pagina registro de usuario.
+  private redirigirRegistro() {
+    this.router.navigate(['inicio-sesion/registro-usuario']);
+    //this.router.navigate(['registro-usuario'], {relativeTo: this.route });
+  }
 }

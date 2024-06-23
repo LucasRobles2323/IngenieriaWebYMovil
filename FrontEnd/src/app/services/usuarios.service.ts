@@ -1,41 +1,47 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
+import { Observable} from 'rxjs';
+
 import { config } from 'src/environments/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
-  private baseUrl = config.url;
+  private apiUrl = config.url;
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/login`, { email, password });
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/usuarios`);
   }
 
-  changePassword(email: string, newPassword: string): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${email}/change-password`, { new_password: newPassword });
+  getUserByEmail(email: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${email}`);
   }
 
-  getUsers(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/usuarios`);
-  }
-
-  getUser(email: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${email}`);
+  getCurrentUser(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/current-usuario`);
   }
 
   createUser(user: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/new-usuario`, user);
+    return this.http.post<any>(`${this.apiUrl}/new-usuario`, user);
   }
 
-  updateUser(email: string, user: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${email}/update`, user);
+  updateUser(user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/update`, user);
   }
 
-  deleteUser(email: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${email}/eliminar`);
+  changePassword(newPassword: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/change-password`, { new_password: newPassword });
   }
+
+  deleteUser(): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/eliminar/current-user`);
+  }
+
+  deleteDistinctUser(email: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/eliminar/distinct-user`, { body: { email } });
+  }
+
 }

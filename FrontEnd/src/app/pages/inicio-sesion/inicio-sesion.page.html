@@ -29,9 +29,8 @@
       
       </form>
   
-      <ion-button 
+      <ion-button (click)="login()"
         class="ion-padding ion-text-center"
-        (click)="onSubmit()"
         expand="block" 
         type="button"
         [disabled]="!loginForm.valid">

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, g
 from flask_bcrypt import Bcrypt, check_password_hash
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -11,25 +11,43 @@ import mysql.connector
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 CORS(app)
+#CORS(app, resources={r"/*": {"origins": "http://localhost:8100"}})  # Configurar CORS para permitir solicitudes desde Angular
 
 # Configuración del JWT para manejar la sesion de usuario.
 app.config['JWT_SECRET_KEY'] = '2010 earthquake, I overslept.'
 jwt = JWTManager(app)
 
-# Configuración de la conexión a la base de datos
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="", # Contraseña de tu base de datos
-    database="robot-movil"
-)
+def get_db():
+    if 'db' not in g:
+        g.db = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='',
+            database='robot-movil'
+        )
+    return g.db
+
+
+@app.teardown_appcontext
+def close_db(exception):
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
+
+# Limpiar sesiones expiradas antes de cada solicitud
+@app.before_request
+def before_request():
+    clean_expired_sessions()
 
 # Función para limpiar sesiones expiradas
 def clean_expired_sessions():
+    db = get_db()
     cursor = db.cursor()
     cursor.execute("DELETE FROM sesiones WHERE fecha_expiracion < NOW()")
     db.commit()
     cursor.close()
+
+
 
 # Ruta de inicio
 @app.route('/')
@@ -41,6 +59,7 @@ def index():
 # Ruta para obtener todos los usuarios
 @app.route('/usuarios', methods=['GET'])
 def get_users():
+    db = get_db()
     cursor = db.cursor(dictionary=True)
     cursor.execute("SELECT email, nombre, rut, region, comuna, isAdmin FROM usuarios")
     users = cursor.fetchall()
@@ -50,6 +69,7 @@ def get_users():
 # Ruta para obtener un usuario por su email
 @app.route('/<string:email>', methods=['GET'])
 def get_user(email):
+    db = get_db()
     cursor = db.cursor(dictionary=True)
     cursor.execute("SELECT email, nombre, rut, region, comuna, password, isAdmin FROM usuarios WHERE email = %s", (email,))
     user = cursor.fetchone()
@@ -71,6 +91,7 @@ def post_user():
     password = bcrypt.generate_password_hash(data['password']).decode('utf-8')
     isAdmin = data.get('isAdmin', False)  # Por defecto, isAdmin es False si no se especifica
 
+    db = get_db()
     cursor = db.cursor()
     try:
         cursor.execute("INSERT INTO usuarios (email, nombre, rut, region, comuna, password, isAdmin) VALUES (%s, %s, %s, %s, %s, %s, %s)",
@@ -87,6 +108,7 @@ def login():
     email = data['email']
     password = data['password']
 
+    db = get_db()
     cursor = db.cursor(dictionary=True)
     cursor.execute("SELECT email, password FROM usuarios WHERE email = %s", (email,))
     user = cursor.fetchone()
@@ -114,12 +136,30 @@ def login():
 @jwt_required() 
 def logout():
     current_user = get_jwt_identity()
+    db = get_db()
     cursor = db.cursor()
-    cursor.execute("DELETE FROM sesiones WHERE email = %s", (current_user,))
-    db.commit()
-    cursor.close()
-    return jsonify({"message": "Logout exitoso"}), 200
+    try:
+        cursor.execute("DELETE FROM sesiones WHERE email = %s", (current_user,))
+        db.commit()
+        cursor.close()
+        jsonify({"message": "Logout exitoso"}), 200
+    except mysql.connector.Error as err:
+        return jsonify({"error": str(err)}), 400
 
+@app.route('/current-usuario', methods=['GET'])
+@jwt_required()
+def get_current_user():
+    current_user = get_jwt_identity()
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
+    cursor.execute("SELECT email, nombre, rut, region, comuna, isAdmin FROM usuarios WHERE email = %s", (current_user,))
+    user = cursor.fetchone()
+    cursor.close()
+
+    if user:
+        return jsonify(user), 200
+    else:
+        return jsonify({"error": "Usuario no encontrado"}), 404
     
 # Ruta para cambiar la contraseña del usuario actual
 @app.route('/change-password', methods=['PUT'])
@@ -135,6 +175,7 @@ def change_password():
 
     hashed_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
 
+    db = get_db()
     cursor = db.cursor()
     try:
         cursor.execute("UPDATE usuarios SET password = %s WHERE email = %s", (hashed_password, current_user))
@@ -157,6 +198,7 @@ def put_user():
     comuna = data.get('comuna') 
     isAdmin = data.get('isAdmin', False) # Por defecto, isAdmin es False si no se especifica
 
+    db = get_db()
     cursor = db.cursor()
     try:
         if nombre:
@@ -187,6 +229,7 @@ def delete_distinct_user():
     if current_user == email:
         return jsonify({"error": "No permitido."}), 403
 
+    db = get_db()
     cursor = db.cursor()
     try:
         cursor.execute("DELETE FROM usuarios WHERE email = %s", (email,))
@@ -202,6 +245,7 @@ def delete_distinct_user():
 def delete_current_user():
     current_user = get_jwt_identity()
 
+    db = get_db()
     cursor = db.cursor()
     try:
         cursor.execute("DELETE FROM usuarios WHERE email = %s", (current_user,))
@@ -243,12 +287,6 @@ def get_comunas(codigo):
         return jsonify(comunas=region['comunas'])
     else:
         return jsonify(error="Región no encontrada"), 404
-
-
-# Limpiar sesiones expiradas antes de cada solicitud
-@app.before_request
-def before_request():
-    clean_expired_sessions()
 
 if __name__ == '__main__':
     app.run(debug=True)

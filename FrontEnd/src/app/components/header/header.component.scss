@@ -1,6 +1,7 @@
 ion-header {
+  --ion-safe-area-top: 50px;
+  max-height: 50px;
   background: var(--ion-color-secondary);
-  max-height: 45px;
   
   ion-toolbar {
     --background: inherit;
