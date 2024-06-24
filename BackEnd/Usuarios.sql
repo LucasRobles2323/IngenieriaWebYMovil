@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Insertar valores en la tabla de usuarios
 INSERT INTO `usuarios` (email, nombre, rut, region, comuna, password, isAdmin)
 VALUES 
-('lucasrobles23@mail.cl', 'Lucas Robles', '21365017-3', 'Región de Valparaíso', 'Valparaiso', '$2b$12$z8ZUfG1sFtDhh1vOOrSjLO3X9dMX5.tVu2kMOa5ShkX6Jr7H4ErWS', 1),
+('lucasrobles23@mail.cl', 'Lucas Robles', '21365017-3', 'Región de Valparaíso', 'Valparaiso', '$2b$12$EkCdYZVVB5xFTNzeYpFcSOK3PgK0w.GctsxFzkea7TdA0/z3cnacG', 1),
 ('example@mail.com', 'Example User', '11050001-7', 'Región de Atacama', 'Copiapó', '$2b$12$tHiGu2036iHyZVrQO5HUfelj8dGrk./JdUYzkjM6pjhTz8nI/EWEy', 0),
 ('geraldespi45@mail.cl', 'Gerald Espinoza', '10004923-6', 'Región Metropolitana de Santiago', 'Alhué', '$2b$12$UAZzrF37wdme8xpS8dqQaenGGx0zqKFmkGpSSyTb8IVjsa.gh.LRO', 1);
 
