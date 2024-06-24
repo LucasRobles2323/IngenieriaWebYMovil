@@ -39,19 +39,19 @@ export class SesionUsuarioPage implements OnInit {
       },
       (error) => {
         console.error('Error al cargar el usuario actual', error);
-        // Manejar el error según sea necesario (redirigir, mostrar mensaje, etc.)
+        alert("Error al cargar el usuario actual, sesion expirada.");
+        this.redirigirInicioSesion();
       }
     );
   }
 
   editUser() {
     // Lógica para editar usuario
-    //this.router.navigate(['editar-usuario']);
-    alert("Aun no implementado")
+    this.redirigirEditarUsuario();
   }
 
   changePassword() {
-    alert("Aun no implementado")
+    this.redirigirCambiarContrasenha();
   }
 
   deleteAccount() {
@@ -60,6 +60,7 @@ export class SesionUsuarioPage implements OnInit {
       this.usuariosService.deleteUser().subscribe(
         () => {
           this.tokenStorage.signOut(); // Cerrar sesión después de eliminar la cuenta
+          console.log("Cuenta Eliminada");
           this.router.navigate(['inicio-sesion']);
         },
         (error) => {
@@ -72,8 +73,7 @@ export class SesionUsuarioPage implements OnInit {
 
   manageUsers() {
     // Lógica para gestionar usuarios (solo accesible si isAdmin es true)
-    //this.router.navigate(['gestionar-usuarios']);
-    alert("Aun no implementado")
+    this.redirigirAdminDeleteUsers();
   }
 
   logout() {
@@ -81,6 +81,7 @@ export class SesionUsuarioPage implements OnInit {
     this.authService.logout().subscribe(
       () => {
         this.tokenStorage.signOut();
+        console.log("logout exitoso");
         this.router.navigate(['inicio-sesion']);
       },
       (error) => {
@@ -92,5 +93,17 @@ export class SesionUsuarioPage implements OnInit {
 
   private redirigirInicioSesion(){
     this.router.navigate(['inicio-sesion']);
+  }
+
+  private redirigirAdminDeleteUsers(){
+    this.router.navigate(['inicio-sesion/sesion-usuario/admin-delete-users']);
+  }
+
+  private redirigirEditarUsuario(){
+    this.router.navigate(['inicio-sesion/sesion-usuario/editar-usuario']);
+  }
+
+  private redirigirCambiarContrasenha(){
+    this.router.navigate(['inicio-sesion/sesion-usuario/editar-contrasenha']);
   }
 }

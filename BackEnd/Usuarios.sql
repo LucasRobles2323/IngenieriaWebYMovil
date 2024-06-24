@@ -19,10 +19,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Insertar valores en la tabla de usuarios
 INSERT INTO `usuarios` (email, nombre, rut, region, comuna, password, isAdmin)
 VALUES 
-('juan.perez@example.com', 'Juan Perez', '10004917-2', 'Metropolitana', 'Santiago', '$2b$12$L3G8SejZiD7AK5fG/QQts.cTvLYTAEDYKtlb1mlVYFLPBvOsAVuqC', 1),
-('lucasrobles23@mail.cl', 'Lucas Robles', '21365017-3', 'Región de Valparaíso', 'Valparaiso', '$2b$12$QmTVURLeiU2Z7LWuLIgGnerBFZpY4RtW3K8FqRv1Gd9Q6E1w2FxD6', 1),
-('maria.gonzalez@example.com', 'Maria Gonzalez', '10004920-2', 'Valparaiso', 'Valparaiso', '$2b$12$qPvLJNT2MUBpk80Svu6k5.ZJQ.hyTwBxSPXa5tSXeHA4evuQeUXni', 0),
-('pedro.ramirez@example.com', 'Pedro Ramirez', '10004921-0', 'Biobio', 'Concepcion', '$2b$12$ZmZlvZ04tVqVaYtt1.DsbuGuRWF4Mzf3zmh.fX18EKIlZE7Znlhhq', 0);
+('lucasrobles23@mail.cl', 'Lucas Robles', '21365017-3', 'Región de Valparaíso', 'Valparaiso', '$2b$12$z8ZUfG1sFtDhh1vOOrSjLO3X9dMX5.tVu2kMOa5ShkX6Jr7H4ErWS', 1),
+('example@mail.com', 'Example User', '11050001-7', 'Región de Atacama', 'Copiapó', '$2b$12$tHiGu2036iHyZVrQO5HUfelj8dGrk./JdUYzkjM6pjhTz8nI/EWEy', 0),
+('geraldespi45@mail.cl', 'Gerald Espinoza', '10004923-6', 'Región Metropolitana de Santiago', 'Alhué', '$2b$12$UAZzrF37wdme8xpS8dqQaenGGx0zqKFmkGpSSyTb8IVjsa.gh.LRO', 1);
 
 
 -- Crear tabla que maneja las sesiones.

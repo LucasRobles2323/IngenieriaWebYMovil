@@ -1,6 +1,14 @@
 [
     {
         "email":"lucasrobles23@mail.cl",
-        "password":"colo09colo"
+        "password":"colocolo2010"
+    },
+    {
+        "email":"geraldespi45@mail.cl",
+        "password":"espi45za"
+    },
+    {
+        "email":"example@mail.com",
+        "password":"example23"
     }
 ]
