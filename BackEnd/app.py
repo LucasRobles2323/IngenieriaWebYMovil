@@ -47,7 +47,26 @@ def clean_expired_sessions():
     db.commit()
     cursor.close()
 
-
+@app.route('/process', methods=['POST'])
+def process():
+    data = request.json
+    cadena = data.get('Cadena', '')
+    
+    # Parse the string
+    try:
+        r = int(cadena.split('R:')[1].split('G:')[0])
+        g = int(cadena.split('G:')[1].split('B:')[0])
+        b = int(cadena.split('B:')[1].split('D:')[0])
+        d = cadena.split('D:')[1]
+    except (IndexError, ValueError) as e:
+        return jsonify({'error': 'Invalid format'}), 400
+    
+    result = {
+        'RGB': f"({r},{g},{b})",
+        'Distancia': d
+    }
+    
+    return jsonify(result)
 
 # Ruta de inicio
 @app.route('/')
