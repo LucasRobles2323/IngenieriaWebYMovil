@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { config } from 'src/environments/config';
+import { urlBackEnd } from 'src/app/misc/utlBackEnd';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SensorService {
-  private apiUrl = config.url;
+  private apiUrl = urlBackEnd.url;
 
   constructor(private http: HttpClient) { }
 

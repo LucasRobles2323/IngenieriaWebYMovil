@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { config } from 'src/environments/config';
+import { urlBackEnd } from 'src/app/misc/utlBackEnd';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegionesService {
-  private baseUrl = config.url;
+  private baseUrl = urlBackEnd.url;
 
   constructor(private http: HttpClient) { }
 

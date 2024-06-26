@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap} from 'rxjs';
 
 import { TokenStorageService } from './token-storage.service';
-import { config } from 'src/environments/config';
+import { urlBackEnd } from 'src/app/misc/utlBackEnd';
 
 
 interface LoginResponse {
@@ -14,7 +14,7 @@ interface LoginResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = config.url;
+  private apiUrl = urlBackEnd.url;
 
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService) {
   }
