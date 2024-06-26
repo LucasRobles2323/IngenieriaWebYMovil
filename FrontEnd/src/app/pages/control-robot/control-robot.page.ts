@@ -38,6 +38,7 @@ export class ControlRobotPage implements OnInit {
   }
 
   updateAndFetchSensorData() {
+    // La idea es obtener la linea del robot.
     // Aumentar los valores de R, G, B, y Distance en 1
     this.R++;
     this.G++;
