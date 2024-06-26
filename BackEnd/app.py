@@ -11,7 +11,6 @@ import mysql.connector
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 CORS(app)
-#CORS(app, resources={r"/*": {"origins": "http://localhost:8100"}})  # Configurar CORS para permitir solicitudes desde Angular
 
 # Configuración del JWT para manejar la sesion de usuario.
 app.config['JWT_SECRET_KEY'] = '2010 earthquake, I overslept.'

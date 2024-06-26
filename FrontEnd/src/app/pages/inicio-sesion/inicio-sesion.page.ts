@@ -77,12 +77,10 @@ export class InicioSesionPage implements OnInit {
 
   private redirigirSesionUsuario(){
     this.router.navigate(['inicio-sesion/sesion-usuario']);
-    //this.router.navigate(['sesion-usuario'], {relativeTo: this.route });
   }
 
   // Método para dirigirse a la pagina registro de usuario.
   private redirigirRegistro() {
     this.router.navigate(['inicio-sesion/registro-usuario']);
-    //this.router.navigate(['registro-usuario'], {relativeTo: this.route });
   }
 }
