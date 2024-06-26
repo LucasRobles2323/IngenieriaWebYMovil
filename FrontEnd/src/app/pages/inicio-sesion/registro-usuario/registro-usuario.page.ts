@@ -80,7 +80,7 @@ export class RegistroUsuarioPage implements OnInit {
       this.usuariosService.createUser(this.registerForm.value).subscribe(
         response => {
           console.log(response);
-          alert("Registrado exitosamente");
+          console.log("Registrado exitosamente");
           this.redirigirInicioSesion();
         },
       );

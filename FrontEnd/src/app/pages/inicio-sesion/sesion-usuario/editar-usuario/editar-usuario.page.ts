@@ -30,7 +30,6 @@ export class EditarUsuarioPage implements OnInit {
     this.editForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
       rut: ['', [Validators.required, rutValidator]],
-      email: ['', [Validators.required, Validators.email]],
       region: ['', Validators.required],
       comuna: [{value: '', disabled: true}, Validators.required],
     });
@@ -145,7 +144,6 @@ export class EditarUsuarioPage implements OnInit {
       this.editForm.patchValue({
         nombre: this.currentUser.nombre,
         rut: this.currentUser.rut,
-        email: this.currentUser.email,
         region: this.currentUser.region,
         comuna: this.currentUser.comuna,
       });

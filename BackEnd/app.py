@@ -308,6 +308,6 @@ def get_comunas(codigo):
         return jsonify(error="Región no encontrada"), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
     # En vez de 0.0.0.0 hay que poner el ip del PC
-    #app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='169.254.241.190', port=5000, debug=True)
