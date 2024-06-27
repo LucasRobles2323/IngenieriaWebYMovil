@@ -15,86 +15,63 @@ Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde 
 
 ##### Segunda Entrega Parcial
 
-- EP2.1 Implementación de las 5 UI en el framework Ionic.
-- EP2.2 Hacer lectura de datos desde un archivo JSON (puede ser local, o alg´una fuente externa de datos), y mostrarlos en alguna de las pantallas.
-- EP2.3 Definir estructura de datos inicial de la aplicación, y definir la estructura de la base de datos, y el modelo de datos. Algunos motores de bases de datos que se pueden utilizar son: MySQL, PostgreSQL, SQLite, MongoDB, Firebase, entre otros.
-- EP2.4 Hacer uso de al menos dos (2) patrones de diseño, ya sea web o móvil, en la implementación de las pantallas, teniendo como foco principal el uso desde un dispositivo móvil.
+- EF.1 Implementar la versión final de la sesión de usuarios, considerando la autenticación y autorización de usuarios, y la gestión de roles (usuario y administrador).
+- EF.2 Implementar el backend de la aplicación, con enfoque de API REST, y utilizando el framework y la base de datos seleccionadas, con conexión entre ambos. Se deben considerar al menos 2 rutas, y que involucren algunos de los métodos HTTP (GET, POST, PUT, DELETE). Algunos frameworks de ejemplo son: Express.js, Nest.js, Spring Boot, Flask, entre otros.
+- EF.3 Implementar la conexión entre el frontend y el backend, utilizando el concepto de API REST, y consumir los datos desde el backend, y mostrarlos en el frontend.
+- EF.4 Implementación de al menos 4 aspectos de seguridad web. Algunos ejemplos son: Autenticación y autorización de usuarios mediante JWT, encriptación de contraseñas en la base de datos (hashing), captcha (no soy un robot), crear usuario de DB y limitar permisos, manejo de cierre de sesión, identificador de sesión, uso de variables de entorno en el desarrollo para proteger datos sensibles, entre otros.
 
-### EP2.1
+### EF.1 Implementar la versión final de la sesión de usuarios, considerando la autenticación y autorización de usuarios, y la gestión de roles (usuario y administrador).
 
-1. Menú: Esta en la carpeta src/app/tabs, esta presente en cada pantalla
+Se hace autentificación de usuarios con el backend (la contraseña encriptada), y se da respuesta al frontEnd, si concuerda, se inicia sesion correctamente. Se maneja roles admin y user en el frontend, porque usuario tiene un atributo "isAdmin".
 
-2. Registro de Usuario: Esta en la carpeta src/app/tab3/registro
 
-3. Inicio de sesión: Esta en la carpeta src/app/tab3
+### EF.2 Implementar el backend de la aplicación, con enfoque de API REST, y utilizando el framework y la base de datos seleccionadas, con conexión entre ambos. Se deben considerar al menos 2 rutas, y que involucren algunos de los métodos HTTP (GET, POST, PUT, DELETE). Algunos frameworks de ejemplo son: Express.js, Nest.js, Spring Boot, Flask, entre otros.
 
-4. Control Remoto del Robot: Esta en la carpeta src/app/tab2
+Se uso Flask para el backend, considerando que parte del objetivo del grupo era usar las funciones python del robot en el backend y comunicarse con el robot desde una apk en celular.
 
-5. Recorrer el laberinto: src/app/tab1. Dentro de la carpeta tambien existe la pagina laberinto-end. Para acceder simplemente presione el boton iniciar en la pestaña y espere a que cargue, no tarda mas de 5 segundos.
+Se conecto el backend con el frontend por medio de servicios en el frontend, que estan en una carpeta llama services en src/app/services. Se usaron GET, POST, PUT, DELETE para manejar a los usuarios.
 
-Se cambiaron algunos aspectos visuales de la aplicación por diseño, pero las funcionalidades son las mismas.
+Tambien se comunica con el backend para obtener regiones y comunas de un json para el registro de sesión y el editar usuario.
 
-### EP2.2
+### EF.3 Implementar la conexión entre el frontend y el backend, utilizando el concepto de API REST, y consumir los datos desde el backend, y mostrarlos en el frontend.
 
-El json se encuentra en ./src/assets/BD.json  
+El unico que se comunica con BD es el backend, el frontend recibe informacion del backend (el backend compara contraseñas, revisa que usuario y contraseña coincidan, obtiene los datos de la bd, elimina o edita datos de la bd, entregando los resultados por mensajes al frontend).
 
-Se guarda los datos de 2 usuarios, uno es admin y el otro no. Es posible iniciar sesión si se ingresa datos correctos del json.
 
-Al ingresar un email y contraseña que corresponden a usuarios guardados, se enviara a una pantalla de sesión iniciada, donde se lee del json la informacion del usuario y se muestra en pantalla. Al ingresar datos fuera de la base de datos, entonces solo vera advertencias de que email o contraseña esta mal.
+### EF.4 Implementación de al menos 4 aspectos de seguridad web. Algunos ejemplos son: Autenticación y autorización de usuarios mediante JWT, encriptación de contraseñas en la base de datos (hashing), captcha (no soy un robot), crear usuario de DB y limitar permisos, manejo de cierre de sesión, identificador de sesión, uso de variables de entorno en el desarrollo para proteger datos sensibles, entre otros.
 
-~~~
-[{
-    "idUsuario": "1", 
-    "nombre": "Lucas Juan Bravo Espinoza",
-    "rut": "21.332.121-3",
-    "email": "lujuabraes@mail.com",
-    "region": "Región de Valparaíso",
-    "comuna": "Viña del Mar",
-    "password": "1234567",
-    "isAdmin": false
-},
-{
-    "idUsuario": "2", 
-    "nombre": "Juan Matias Bravo Gonzalez",
-    "rut": "21.332.432-k",
-    "email": "jumabrago@mail.com",
-    "region": "Región de Valparaíso",
-    "comuna": "Valparaíso",
-    "password": "7654321",
-    "isAdmin": true
-}]
-~~~
-
-No se guardan los datos de registro de sesión, porque no se permite modificar archivos desde el backend, asi que no se puede guardar en el json.
-
-### EP2.3
-
-En la carpeta BD_SQL se creo una base de datos inicial para la aplicación con los datos que consideramos importantes considerar.
-
-### EP2.4
-
-Se usaron 2 patrones de diseño.
-
-Uno corresponde a tab bar, al ser una aplicación movil, tiene un menu inferior presente en todas las pantallas, ademas que no usa mas de 5 opciones ni menos de 3 opciones. Fue implementado en /tabs
-
-El otro corresponde a back history. Un icono de flecha que permite volver a la pagina en la que se estaba anteriormente presionandolo. Dicho icono se encuentra en el header, en la parte superior de la pantalla, en el extremo izquierdo. Fue implementado en el componente header y usado en todas las pantallas con lo contenido en la carpeta shared.
+Se uso autentificacion para revisar que usuario y contraseña son validos en login.
+JWT se uso para saber que esta la sesión iniciada (dando permisos de un usuario iniciado, que en la app es ver y manipular sus datos), el token se guarda en una BD de sesiones, y cada sesion iniciada dura 1 hora.
+Cuando el backend recibe contraseñas, las encripta antes de mandarlas a la BD, ademas si recibe una contraseña, puede comparar con una del BD para ver si son la misma (para login).
+Se maneja el cierre de sesión, se elimina la sesion de la BD y ya no se puede acceder a las funciones que requeren ser un usuario con sesion iniciada.
 
 ### Como ejecutar
 
-Primero tiene que abrir la carpeta MazeMaster en Visual Studio Code. Una vez alli tiene que abrir una terminal de cmd.
+En el backend, existe un libreries.py que instala las librerias de python necesarias (hace los comandos pip install para todas las librerias). Para esto es necesario tener python instalado con el PATH (lo que permite comandos pip en consola windows).
 
-Luego en la terminal ingresa el siguiente comando
+Para el servidor de la base de datos, usamos XAMPP, en la carpeta BackEnd, existe un Usuarios.sql. Esto contiene un script para crear la base de datos con el nombre que solicita el Backend, se debe usar sql en XAMPP sin entrar a ninguna DB y creara la base de datos con sus tablas y algunos datos.
+
+Para el FrontEnd, se debe tener instalado NodeJS y Ionic. Se ingresa a la carpeta FrontEnd y se ejecuta el comando
 ~~~
 npm install
 ~~~
+en cmd ubicandose en FrontEnd.
 
-Con ese comando se instalaran las dependencias del proyecto, este proceso puede tardar un rato.
+Luego de tener las librerias y dependencias instaladas y la BD creada.
 
-Una vez este todo instalado se ejecuta el siguiente comando
+Se debe hacer lo siguiente.
+
+1. Tener la BD en linea
+2. Poner a correr el BackEnd, se debe estar en cd BackEnd en la consola cmd y poner
+~~~
+py app.py
+~~~
+3. Se inicia el FrontEnd, estando en cd FrontEnd en la consola cmd y poner
 ~~~
 ionic serve
 ~~~
 
-Una vez que cargue, se abrira el proyecto en su navegador.
 
-Luego puede usar las herramientas de desarrollador para ver la aplicación en pantallas moviles.
+Se tiene un json de rutValidos porque se valida el rut (no se puede poner cualquier numero ni cualquier digito verificador), puede copiar y pegar para un registro.
+
+Tambien se tiene un json de usuarios validos, que son los que se crean en sql si uso el que esta en el backend. Esto para probar el inicio de sesión sin registrar usuario.
